@@ -18,4 +18,5 @@ def calculate(data):
     return {'label':str(model.classes_[np.argmax(scores)]),'confidence':round(float(max(scores)),4),
             'coordinates':model.transform(query)[0].round(4).tolist(),
             'holdout_accuracy':round(float(model.score(scaler.transform(vectors(x_hold)),
-                                          [r['pattern'] for r in x_hold])),4),'held_out':len(x_hold)}
+                                          [r['pattern'] for r in x_hold])),4),'held_out':len(x_hold),
+            'held_out_segments':[{'code': r['code'], 'pattern': r['pattern']} for r in x_hold]}

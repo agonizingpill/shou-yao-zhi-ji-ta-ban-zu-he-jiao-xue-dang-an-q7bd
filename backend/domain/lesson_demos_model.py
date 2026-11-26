@@ -9,4 +9,6 @@ lesson_demos = Table('lesson_demos', metadata,
     Column('loom', String(160), ForeignKey('looms.code'), nullable=False),
     Column('lesson', String(160), nullable=False),
     Column('state', String(160), nullable=False),
+    # 沿替换链回退所需的上一版本
+    Column('replaced_from', String(64), ForeignKey('lesson_demos.code'), nullable=True),
 )

@@ -31,6 +31,10 @@
     {
       "name": "token",
       "label": "计算号"
+    },
+    {
+      "name": "state",
+      "label": "状态"
     }
   ],
   "layout": "split",

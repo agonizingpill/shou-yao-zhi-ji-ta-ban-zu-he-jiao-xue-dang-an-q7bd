@@ -15,3 +15,8 @@ class RecordSegment(BaseModel):
 class VerifySegment(BaseModel):
     model_config = ConfigDict(extra="forbid")
     segment: Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=160)]
+
+
+class RevokeSegment(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    segment: Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=160)]

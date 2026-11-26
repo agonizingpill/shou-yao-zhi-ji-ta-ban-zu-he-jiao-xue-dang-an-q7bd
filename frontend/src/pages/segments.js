@@ -5,7 +5,7 @@
   "title": "踏板动作样段",
   "module": "动作样段",
   "caption": "动作样段",
-  "detail": "教研员记录一次完整循环的左右脚频次和停顿。复核比对节拍后进入训练参考。",
+  "detail": "教研员记录一次完整循环的左右脚频次和停顿。复核比对节拍后进入训练参考；撤销对拍将作废相关签注并回退在用示范。",
   "path": "/segments",
   "columns": [
     {
@@ -35,6 +35,10 @@
     {
       "name": "checked",
       "label": "已对拍"
+    },
+    {
+      "name": "revoked",
+      "label": "已撤销"
     }
   ],
   "layout": "stack",
@@ -106,6 +110,24 @@
         "reviewer"
       ],
       "success": "已写入"
+    },
+    {
+      "name": "revoke_segment",
+      "label": "撤销样段对拍",
+      "path": "/segments/revoke-segment",
+      "fields": [
+        {
+          "name": "segment",
+          "label": "样段号",
+          "kind": "text",
+          "initial": "SEG-09"
+        }
+      ],
+      "help": "撤销后：用过该样段的签注作废（待辨/训练/留出都算），排队计算不得签注，在用示范沿替换记录回退或停用。重试不重复回退，影响见撤销影响台账。",
+      "roles": [
+        "reviewer"
+      ],
+      "success": "已撤销"
     }
   ]
 };
